@@ -15,38 +15,174 @@
     <title>Suke=Profile</title>
 </head>
 
-<body>
-    <header>
-        <div class="contaniner">
-            <h1>これから始めるプログラマーへの道</h1>
-            <button type="button" class="btn btn-default" id="IndexMenu">
-                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-down" fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd"
-                        d="M3.204 5L8 10.481 12.796 5H3.204zm-.753.659l4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
-                </svg>
-            </button>
-            <button type="button" class="btn btn-primary">
-                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-up-fill" fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M7.247 4.86l-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
-                </svg>
-            </button>
-            <nav>
-                <ul>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">SKILL</a></li>
-                    <li><a href="#">SERVICE</a></li>
-                    <li><a href="#">FLOW</a></li>
-                    <li><a href="#">HISTORY</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <main>
 
-    </main>
+
+
+
+<body>
+    <!-- ナビゲーションバー -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light py-2">
+            <div class="d-flex">
+                <a class="navbar-brand" href="#">
+                    <img src="images/Suketrap_cut.png" width="40" height="40" class="d-inline-block align-top" alt="">
+                    <img src="images/SukeProfile.png" width="90" height="40" class="d-inline-block align-top" alt="">
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item mr-2">
+                        <a class="nav-link text-dark font-weight-normal" href="#">ABOUT</a>
+                    </li>
+                    <li class="nav-item mr-2">
+                        <a class="nav-link text-dark font-weight-normal" href="#">SKILL</a>
+                    </li>
+                    <li class="nav-item mr-2">
+                        <a class="nav-link text-dark font-weight-normal" href="#">SERVISE</a>
+                    </li>
+                    <li class="nav-item mr-2">
+                        <a class="nav-link text-dark font-weight-normal" href="#">FLOW</a>
+                    </li>
+                    <li class="nav-item mr-2">
+                        <a class="nav-link text-dark font-weight-normal" href="#">HISTORY</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <article>
+        <!-- トップ画像 -->
+        <div class="card w-100">
+            <img src="images/Unibasu.jpg" class="img-resposive" style="height: 20rem;" alt="">
+            <div class="card-body card-img-overlay text-center mt-5">
+                <p><img src="images/Sukestrap_cut_s.png" class="" alt=""></p>
+                <h1 class="card-title text-white">Welcome</h1>
+                <h4 class="card-subtitle text-white">--- Suke Profile ---</h4>
+            </div>
+        </div>
+
+        <div class="mb-5 pt-1">
+            <section id="about" class="container w-100">
+                <!-- ABOUT -->
+                <div class="clearfix mx-5">
+                    <p class="my-5 h1 text-center"> - ABO<span class="text-secondary">UT</span> - </p>
+                    <div class="float-left h3">
+                        <p class="line-height mb-3" style="line-height: 3rem;">
+                            洲鎌 勇介（すがま ゆうすけ）<br>
+                            沖縄県生まれの浦添市育ちの２３歳。<br>
+                            訓練校にてプログラミングの勉強に励む傍ら<br>
+                            その知識と技術を活かしたいと思い<span class="text-warning">TOMONI</span>を利用する。
+                        </p>
+                        <p>学習の心得は「１学習につき１冊以上の参考書」です。</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- SKILL -->
+        <div class="bg-light pt-1">
+            <section id="skill" class="container">
+                <p class="my-5 h1 text-center"> - SKI<span class="text-secondary">LL</span> - </p>
+                <div class="row">
+                    <!-- Web言語 -->
+                    <div id="skill-web" class="d-flex flex-wrap-reverse justify-content-center w-100 mb-5">
+                        <div class="col-md-5">
+                            <img src="images/Code.png" class="img-fluid" alt="プログラムの画像1">
+                        </div>
+                        <div class="col-md-7 mb-md-3">
+                            <h3 class="text-left mb-3">&lt;Web言語&gt;</h3>
+                            <p class="h4 mb-3">
+                                HTMLは約2年間学習しており<br><span class="text-info">Webクリエイター能力認定試験 エキスパート</span>を取得。
+                            </p>
+                            <p class="h4 mb-3">
+                                CSSもHTMLと一緒に学習してきたが<br>最近は<span class="text-danger">SASS</span>や<span class="text-primary">Bootstrap</span>の技術を磨いている。
+                            </p>
+                            <p class="h4 mb-3">
+                                JavaScriptは主に<span class="text-warning">jQuery</span>を使っており<br>興味があった<span class="text-body">anime.js</span>や<span class="text-danger">React</span>も少しかじっている。
+                            </p>
+                        </div>
+                    </div> 
+                    <!-- 他言語 -->
+                    <div id="skill-other" class="d-flex flex-wrap justify-content-center w-100 mb-5">
+                        <div class="col-md-7 mb-md-3">
+                            <h3 class="text-left mb-3">&lt;他言語&gt;</h3>
+                            <p class="h4 mb-3">
+                                C・Javaに片足を踏み入れ<br><span class="text-info">C言語プログラミング能力認定試験2級 合格</span>を取得。
+                            </p>
+                            <p class="h4 mb-3">
+                                Unity・C#ですごろくゲーム「<span class="text-success">トレリア</span>」を制作。<br>GoogleのPlayストアからDLして遊べます。
+                            </p>
+                            <p class="h4 mb-3">
+                                言語ではないが幅広い情報学を学ぶために<br><span class="text-info">基本情報技術者試験</span>も合格。
+                            </p>
+                        </div>
+                        <div class="col-md-5">
+                            <img src="images/PC.png" class="img-fluid" alt="プログラムの画像2">
+                        </div>
+                    </div> <!-- 他言語 -->
+                    <!-- 趣味 -->
+                    <div id="skill-inter" class="d-flex flex-wrap-reverse justify-content-center w-100 mb-5">
+                        <div class="col-md-5">
+                            <img src="images/Intrasting.png" class="img-fluid" alt="プログラムの画像2">
+                        </div>
+                        <div class="col-md-7 mb-md-3">
+                            <h3 class="text-left mb-3">&lt;趣味&gt;</h3>
+                            <p class="h4 mb-3">
+                                絵を描くことが好き。<br>特に木の幹を描いているときが楽しい。
+                            </p>
+                            <p class="h4 mb-3">
+                                20歳から独学でピアノを弾いている。<br>現在制作中のホラーゲームのBGM・SE制作も担当。
+                            </p>
+                            <p class="h4 mb-3">
+                                週に１回の筋トレ。<br>現在コロナウイルスの影響でトレーニングが低効率になっているのが悩み。
+                            </p>
+                        </div>
+                    </div> <!-- 趣味 -->
+                </div>
+            </section>
+        </div>
+
+        <!-- SERVISE -->
+        <div class="bg-whiite pt-1">
+            <section id="servise" class="container">
+                <p class="my-5 h1 text-center"> - <span class="text-secondary">SER</span>VISE - </p>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="card">
+                            <img src="images/Coding.png" alt="コーディング画像" class="card-img-top w-100">
+                            <div class="card-body">
+                                <h4 class="card-title mb-4">コーディング代行（１ページ）5000円〜</h4>
+                                <ul>
+                                    <li><p class="card-text mb-2">Webサイトのデザイン/コーディング</p></li>
+                                    <li><p class="card-text mb-2">スマートフォンなどのレスポンシブデザインにも対応可能</p></li>
+                                    <li><p class="card-text mb-2">写真・文章・大まかなデザイン案をご依頼者様にてご用意いただき、細かな内容についてはご相談にて調整いたします。</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card">
+                            <img src="images/OtherCode.png" alt="コーディング画像" class="card-img-top w-100">
+                            <div class="card-body">
+                                <h4 class="card-title mb-4">ペアプログラミング（１か月）5000円〜</h4>
+                                <ul>
+                                    <li><p class="card-text mb-2">一緒にコーディングをしてご依頼者様の成長をサポート</p></li>
+                                    <li><p class="card-text mb-2">HTML/CSS/JavaScript/jQuery/etc...初めての言語も対応可能</p></li>
+                                    <li><p class="card-text mb-2">始めのご相談で1か月の目標を決め、週に1回のzoomペアプログラミングで挫折を共に乗り越えられます。</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+    </article>
     <footer>
 
     </footer>
