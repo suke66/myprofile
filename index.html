@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
@@ -13,11 +13,8 @@
     <script src="js/bootstrap.min.js"></script>
 
     <title>Suke=Profile</title>
+
 </head>
-
-
-
-
 
 <body>
     <!-- ナビゲーションバー -->
@@ -54,26 +51,85 @@
             </div>
         </nav>
     </header>
+
     <article>
         <!-- トップ画像 -->
-        <div class="card w-100">
-            <img src="images/Unibasu.jpg" class="img-resposive" style="height: 20rem;" alt="">
-            <div class="card-body card-img-overlay text-center mt-5">
-                <p><img src="images/Sukestrap_cut_s.png" class="" alt=""></p>
-                <h1 class="card-title text-white">Welcome</h1>
-                <h4 class="card-subtitle text-white">--- Suke Profile ---</h4>
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="card">
+                        <img class="d-block img-fluid" src="images/Unibasu.png" alt="">
+                        <div class="card-img-overlay container">
+                            <div class="row align-items-center h-100">
+                                <div class="col-12">
+                                    <div class="text-center">
+                                        <img src="images/Sukestrap_cut_s.png" alt="ロゴ" class="my-3" width="80">
+                                        <h1 class="text-white text-center" style="font-size: 4rem;">Welcome</h1>
+                                        <h4 class="text-white text-center" style="font-size: 2rem;">- Suke Profile -
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <img class="d-block img-fluid" src="images/TopFlower.png" alt="">
+                        <div class="card-img-overlay container">
+                            <div class="row align-items-center h-100">
+                                <div class="col-12">
+                                    <div class="text-center">
+                                        <img src="images/Sukestrap_cut_s.png" alt="ロゴ" class="my-3" width="80">
+                                        <h1 class="text-white text-center" style="font-size: 4rem;">Welcome</h1>
+                                        <h4 class="text-white text-center" style="font-size: 2rem;">- Suke Profile -
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <img class="d-block img-fluid" src="images/TopBallon.png" alt="">
+                        <div class="card-img-overlay container">
+                            <div class="row align-items-center h-100">
+                                <div class="col-12">
+                                    <div class="text-center">
+                                        <img src="images/Sukestrap_cut_s.png" alt="ロゴ" class="my-3" width="80">
+                                        <h1 class="text-white text-center" style="font-size: 4rem;">Welcome</h1>
+                                        <h4 class="text-white text-center" style="font-size: 2rem;">- Suke Profile -
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
+        <!-- <div class="jumbotron jumbotron-fluid">
+            <div class="card">
+                <img src="images/Unibasu.jpg"  alt="">
+                <div class="card-img-overlay text-center my-auto">
+                    <img src="images/Sukestrap_cut_s.png" class="" alt="">
+                    <h1 class="text-white">Welcome</h1>
+                    <h4 class="text-white">--- Suke Profile ---</h4>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- ABOUT -->
         <div class="mb-5 pt-1">
             <section id="about" class="container w-100">
-                <!-- ABOUT -->
                 <div class="clearfix mx-5">
                     <p class="my-5 h1 text-center"> - ABO<span class="text-secondary">UT</span> - </p>
                     <div class="float-left h3">
                         <p class="line-height mb-3" style="line-height: 3rem;">
                             洲鎌 勇介（すがま ゆうすけ）<br>
-                            沖縄県生まれの浦添市育ちの２３歳。<br>
+                            沖縄県生まれ浦添市育ちの２３歳。<br>
                             訓練校にてプログラミングの勉強に励む傍ら<br>
                             その知識と技術を活かしたいと思い<span class="text-warning">TOMONI</span>を利用する。
                         </p>
@@ -82,7 +138,7 @@
                 </div>
             </section>
         </div>
-        
+
         <!-- SKILL -->
         <div class="bg-light pt-1">
             <section id="skill" class="container">
@@ -99,13 +155,15 @@
                                 HTMLは約2年間学習しており<br><span class="text-info">Webクリエイター能力認定試験 エキスパート</span>を取得。
                             </p>
                             <p class="h4 mb-3">
-                                CSSもHTMLと一緒に学習してきたが<br>最近は<span class="text-danger">SASS</span>や<span class="text-primary">Bootstrap</span>の技術を磨いている。
+                                CSSもHTMLと一緒に学習してきたが<br>最近は<span class="text-danger">SASS</span>や<span
+                                    class="text-primary">Bootstrap</span>の技術を磨いている。
                             </p>
                             <p class="h4 mb-3">
-                                JavaScriptは主に<span class="text-warning">jQuery</span>を使っており<br>興味があった<span class="text-body">anime.js</span>や<span class="text-danger">React</span>も少しかじっている。
+                                JavaScriptは主に<span class="text-warning">jQuery</span>を使っており<br>興味があった<span
+                                    class="text-body">anime.js</span>や<span class="text-danger">React</span>も少しかじっている。
                             </p>
                         </div>
-                    </div> 
+                    </div>
                     <!-- 他言語 -->
                     <div id="skill-other" class="d-flex flex-wrap justify-content-center w-100 mb-5">
                         <div class="col-md-7 mb-md-3">
@@ -114,7 +172,8 @@
                                 C・Javaに片足を踏み入れ<br><span class="text-info">C言語プログラミング能力認定試験2級 合格</span>を取得。
                             </p>
                             <p class="h4 mb-3">
-                                Unity・C#ですごろくゲーム「<span class="text-success">トレリア</span>」を制作。<br>GoogleのPlayストアからDLして遊べます。
+                                Unity・C#ですごろくゲーム「<span
+                                    class="text-success">トレリア</span>」を制作。<br>GoogleのPlayストアからDLして遊べます。
                             </p>
                             <p class="h4 mb-3">
                                 言語ではないが幅広い情報学を学ぶために<br><span class="text-info">基本情報技術者試験</span>も合格。
@@ -157,9 +216,16 @@
                             <div class="card-body">
                                 <h4 class="card-title mb-4">コーディング代行（１ページ）5000円〜</h4>
                                 <ul>
-                                    <li><p class="card-text mb-2">Webサイトのデザイン/コーディング</p></li>
-                                    <li><p class="card-text mb-2">スマートフォンなどのレスポンシブデザインにも対応可能</p></li>
-                                    <li><p class="card-text mb-2">写真・文章・大まかなデザイン案をご依頼者様にてご用意いただき、細かな内容についてはご相談にて調整いたします。</p></li>
+                                    <li>
+                                        <p class="card-text mb-2">Webサイトのデザイン/コーディング</p>
+                                    </li>
+                                    <li>
+                                        <p class="card-text mb-2">スマートフォンなどのレスポンシブデザインにも対応可能</p>
+                                    </li>
+                                    <li>
+                                        <p class="card-text mb-2">写真・文章・大まかなデザイン案をご依頼者様にてご用意いただき、細かな内容についてはご相談にて調整いたします。
+                                        </p>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -170,9 +236,15 @@
                             <div class="card-body">
                                 <h4 class="card-title mb-4">ペアプログラミング（１か月）5000円〜</h4>
                                 <ul>
-                                    <li><p class="card-text mb-2">一緒にコーディングをしてご依頼者様の成長をサポート</p></li>
-                                    <li><p class="card-text mb-2">HTML/CSS/JavaScript/jQuery/etc...初めての言語も対応可能</p></li>
-                                    <li><p class="card-text mb-2">始めのご相談で1か月の目標を決め、週に1回のzoomペアプログラミングで挫折を共に乗り越えられます。</p></li>
+                                    <li>
+                                        <p class="card-text mb-2">一緒にコーディングをしてご依頼者様の成長をサポート</p>
+                                    </li>
+                                    <li>
+                                        <p class="card-text mb-2">HTML/CSS/JavaScript/jQuery/etc...初めての言語も対応可能</p>
+                                    </li>
+                                    <li>
+                                        <p class="card-text mb-2">始めのご相談で1か月の目標を決め、週に1回のzoomペアプログラミングで挫折を共に乗り越えられます。</p>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -180,6 +252,30 @@
                 </div>
             </section>
         </div>
+
+        <!-- FLOW -->
+        <!-- <div class="bg-whiite pt-1">
+            <section id="flow" class="">
+                <div class="card">
+                    <img class="d-block" src="images/FlowImage_forest.png" alt="">
+                    <div class="card-img-overlay">
+                        <div class="text-center container">
+                            <p class="my-3 h1 text-center text-white align-self-start"> - FLO<span class="text-secondary">W</span> - </p>
+                            <div class="row bg-light" style="height: 15rem;">
+                                <ul class="list-inline bg-secondary my-3 mx-3 pt-2 w-100" style="height: 3rem;">
+                                    <li class="col-2 list-inline-item text-white">STEP<span>１</span></li>
+                                    <li class="col-2 list-inline-item" style="height: 10rem;">&gt;</li>
+                                    <li class="col-2 list-inline-item text-white">STEP<span>２</span></li>
+                                    <li class="col-2 list-inline-item text-white">STEP<span>３</span></li>
+                                    <li class="col-2 list-inline-item text-white">STEP<span>４</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div> -->
+
 
 
     </article>
