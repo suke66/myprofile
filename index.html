@@ -12,16 +12,270 @@
     <!-- BootstrapのJS読み込み -->
     <script src="js/bootstrap.min.js"></script>
 
-    <title>Suke=Profile</title>
+    <!-- トップボタン -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
 
+    <title>Suke-Profile</title>
+
+    <style>
+        /* header */
+        .car-img {
+            height: 41rem;
+        }
+
+        /* コンテンツ */
+        #about,
+        #skill,
+        #servise,
+        #flow,
+        #history {
+            margin-top: -48px;
+            padding-top: 48px;
+        }
+
+        /* フェードイン */
+        .fadeInUp {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: 1s;
+        }
+
+        /* トップボタン */
+        #page_top {
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            right: 15px;
+            bottom: -50px;
+            background: #5f5f5f;
+            opacity: 1;
+            z-index: 5;
+        }
+
+        #page_top a {
+            position: relative;
+            display: block;
+            width: 50px;
+            height: 40px;
+            text-decoration: none;
+        }
+
+        #page_top a::before {
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            content: '\f106';
+            font-size: 25px;
+            color: #fff;
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+            text-align: center;
+        }
+
+        /* タイムラインコンテンツ */
+        .cp_timeline03 {
+            position: relative;
+            margin: 3em auto;
+        }
+
+        .cp_timeline03:before {
+            position: absolute;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            content: '';
+            background-color: #5f5f5f;
+            left: 30px;
+        }
+
+        .cp_timeline03 .timeline_group {
+            position: relative;
+            padding-top: 55px;
+        }
+
+        .cp_timeline03 .timeline_group:not(:first-of-type) {
+            margin-top: 4rem;
+        }
+
+        .cp_timeline03 .time_year {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 0.5rem 1.5rem;
+            color: #fff;
+            background-color: #444;
+            width: 100%;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .cp_timeline03 .timeline_item {
+            margin-bottom: 1em;
+            position: relative;
+            padding-left: 80px;
+        }
+
+        .cp_timeline03 .timeline_item:not(:last-of-type) {
+            margin-bottom: 2em;
+        }
+
+        .cp_timeline03 .timeline_item:before {
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            content: '';
+            background-color: #5f5f5f;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+
+        .cp_timeline03 .time {
+            position: absolute;
+            left: 0;
+            box-sizing: border-box;
+            min-width: 65px;
+            min-height: 65px;
+            padding: 0.5em 0.5em;
+            text-align: center;
+            color: #fff;
+            background-color: #444;
+            top: 50%;
+            margin-top: -33px;
+            border-radius: 65px;
+        }
+
+        .cp_timeline03 .time_day {
+            font-size: 1em;
+            font-weight: 700;
+            display: block;
+        }
+
+        .cp_timeline03 .time_month {
+            font-size: 0.8em;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        .cp_timeline03 .desc {
+            padding: 0.5em 1em;
+            border-left: 3px solid #444;
+            border-radius: 2px;
+            background-color: #fff;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+            font-size: 0.9em;
+        }
+
+        .cp_timeline03 .desc .flag {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+            padding-bottom: 0.3em;
+        }
+
+        @media only screen and (max-width: 767px) {
+            .cp_timeline03:before {
+                left: 0;
+            }
+
+            .cp_timeline03 .timeline_group {
+                padding-top: 40px;
+            }
+
+            .cp_timeline03 .timeline_item {
+                padding-top: 60px;
+                padding-left: 20px;
+            }
+
+            .cp_timeline03 .timeline_item:before {
+                top: 90px;
+            }
+
+            .cp_timeline03 .time {
+                top: 40px;
+                border-radius: 0 20px 20px 0;
+                min-height: 2em;
+            }
+
+            .cp_timeline03 .time_day,
+            .cp_timeline03 .time_month {
+                display: inline-block;
+            }
+
+            .cp_timeline03 .desc {
+                font-size: 0.8em;
+            }
+        }
+    </style>
+
+    <script>
+        // 文字の出現
+        $(function () {
+            function animation() {
+                $('.fadeInUp').each(function () {
+                    //ターゲットの位置を取得
+                    var target = $(this).offset().top + 250;
+                    //スクロール量を取得
+                    var scroll = $(window).scrollTop();
+                    //ウィンドウの高さを取得
+                    var windowHeight = $(window).height();
+                    //ターゲットまでスクロールするとフェードインする
+                    if (scroll > target - windowHeight) {
+                        $(this).css('opacity', '1');
+                        $(this).css('transform', 'translateY(0)');
+                    }
+                });
+            }
+            animation();
+            $(window).scroll(function () {
+                animation();
+            });
+        });
+        // トップボタンの出現
+        jQuery(function () {
+            var appear = false;
+            var pagetop = $('#page_top');
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) { //100pxスクロールしたら
+                    if (appear == false) {
+                        appear = true;
+                        pagetop.stop().animate({
+                            'bottom': '50px' //下から50pxの位置に
+                        }, 300); //0.3秒かけて現れる
+                    }
+                } else {
+                    if (appear) {
+                        appear = false;
+                        pagetop.stop().animate({
+                            'bottom': '-50px' //下から-50pxの位置に
+                        }, 300); //0.3秒かけて隠れる
+                    }
+                }
+            });
+            pagetop.click(function () {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500); //0.5秒かけてトップへ戻る
+                return false;
+            });
+        });
+    </script>
 </head>
 
-<body>
+<body id="top">
     <!-- ナビゲーションバー -->
-    <header>
+    <header class="fixed-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-light py-2">
             <div class="d-flex">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="index.html">
                     <img src="images/Suketrap_cut.png" width="40" height="40" class="d-inline-block align-top" alt="">
                     <img src="images/SukeProfile.png" width="90" height="40" class="d-inline-block align-top" alt="">
                 </a>
@@ -33,24 +287,27 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item mr-2">
-                        <a class="nav-link text-dark font-weight-normal" href="#">ABOUT</a>
+                        <a class="nav-link text-dark font-weight-normal" href="#about">ABOUT</a>
                     </li>
                     <li class="nav-item mr-2">
-                        <a class="nav-link text-dark font-weight-normal" href="#">SKILL</a>
+                        <a class="nav-link text-dark font-weight-normal" href="#skill">SKILL</a>
                     </li>
                     <li class="nav-item mr-2">
-                        <a class="nav-link text-dark font-weight-normal" href="#">SERVISE</a>
+                        <a class="nav-link text-dark font-weight-normal" href="#servise">SERVISE</a>
                     </li>
                     <li class="nav-item mr-2">
-                        <a class="nav-link text-dark font-weight-normal" href="#">FLOW</a>
+                        <a class="nav-link text-dark font-weight-normal" href="#flow">FLOW</a>
                     </li>
                     <li class="nav-item mr-2">
-                        <a class="nav-link text-dark font-weight-normal" href="#">HISTORY</a>
+                        <a class="nav-link text-dark font-weight-normal" href="#history">HISTORY</a>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
+
+    <!-- トップへ戻る -->
+    <div id="page_top"><a href="#top"></a></div>
 
     <article>
         <!-- トップ画像 -->
@@ -58,7 +315,7 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="card">
-                        <img class="d-block img-fluid" src="images/Unibasu.png" alt="">
+                        <img class="d-block img-fluid car-img" src="images/Unibasu.png" alt="">
                         <div class="card-img-overlay container">
                             <div class="row align-items-center h-100">
                                 <div class="col-12">
@@ -75,7 +332,7 @@
                 </div>
                 <div class="carousel-item">
                     <div class="card">
-                        <img class="d-block img-fluid" src="images/TopFlower.png" alt="">
+                        <img class="d-block img-fluid car-img" src="images/TopFlower.png" alt="">
                         <div class="card-img-overlay container">
                             <div class="row align-items-center h-100">
                                 <div class="col-12">
@@ -92,7 +349,7 @@
                 </div>
                 <div class="carousel-item">
                     <div class="card">
-                        <img class="d-block img-fluid" src="images/TopBallon.png" alt="">
+                        <img class="d-block img-fluid car-img" src="images/TopBallon.png" alt="">
                         <div class="card-img-overlay container">
                             <div class="row align-items-center h-100">
                                 <div class="col-12">
@@ -110,23 +367,12 @@
             </div>
         </div>
 
-        <!-- <div class="jumbotron jumbotron-fluid">
-            <div class="card">
-                <img src="images/Unibasu.jpg"  alt="">
-                <div class="card-img-overlay text-center my-auto">
-                    <img src="images/Sukestrap_cut_s.png" class="" alt="">
-                    <h1 class="text-white">Welcome</h1>
-                    <h4 class="text-white">--- Suke Profile ---</h4>
-                </div>
-            </div>
-        </div> -->
-
         <!-- ABOUT -->
         <div class="mb-5 pt-1">
             <section id="about" class="container w-100">
                 <div class="clearfix mx-5">
                     <p class="my-5 h1 text-center"> - ABO<span class="text-secondary">UT</span> - </p>
-                    <div class="float-left h3">
+                    <div class="float-left h3 fadeInUp">
                         <p class="line-height mb-3" style="line-height: 3rem;">
                             洲鎌 勇介（すがま ゆうすけ）<br>
                             沖縄県生まれ浦添市育ちの２３歳。<br>
@@ -145,7 +391,7 @@
                 <p class="my-5 h1 text-center"> - SKI<span class="text-secondary">LL</span> - </p>
                 <div class="row">
                     <!-- Web言語 -->
-                    <div id="skill-web" class="d-flex flex-wrap-reverse justify-content-center w-100 mb-5">
+                    <div id="skill-web" class="d-flex flex-wrap-reverse justify-content-center w-100 mb-5 fadeInUp">
                         <div class="col-md-5">
                             <img src="images/Code.png" class="img-fluid" alt="プログラムの画像1">
                         </div>
@@ -165,7 +411,7 @@
                         </div>
                     </div>
                     <!-- 他言語 -->
-                    <div id="skill-other" class="d-flex flex-wrap justify-content-center w-100 mb-5">
+                    <div id="skill-other" class="d-flex flex-wrap justify-content-center w-100 mb-5 fadeInUp">
                         <div class="col-md-7 mb-md-3">
                             <h3 class="text-left mb-3">&lt;他言語&gt;</h3>
                             <p class="h4 mb-3">
@@ -184,7 +430,7 @@
                         </div>
                     </div> <!-- 他言語 -->
                     <!-- 趣味 -->
-                    <div id="skill-inter" class="d-flex flex-wrap-reverse justify-content-center w-100 mb-5">
+                    <div id="skill-inter" class="d-flex flex-wrap-reverse justify-content-center w-100 mb-5 fadeInUp">
                         <div class="col-md-5">
                             <img src="images/Intrasting.png" class="img-fluid" alt="プログラムの画像2">
                         </div>
@@ -206,10 +452,10 @@
         </div>
 
         <!-- SERVISE -->
-        <div class="bg-whiite pt-1">
+        <div class="bg-whiite mb-5 pt-1">
             <section id="servise" class="container">
                 <p class="my-5 h1 text-center"> - <span class="text-secondary">SER</span>VISE - </p>
-                <div class="row">
+                <div class="row fadeInUp">
                     <div class="col-md-6 mb-3">
                         <div class="card">
                             <img src="images/Coding.png" alt="コーディング画像" class="card-img-top w-100">
@@ -254,33 +500,263 @@
         </div>
 
         <!-- FLOW -->
-        <!-- <div class="bg-whiite pt-1">
+        <div class="bg-whiite pt-1">
             <section id="flow" class="">
                 <div class="card">
-                    <img class="d-block" src="images/FlowImage_forest.png" alt="">
-                    <div class="card-img-overlay">
-                        <div class="text-center container">
-                            <p class="my-3 h1 text-center text-white align-self-start"> - FLO<span class="text-secondary">W</span> - </p>
-                            <div class="row bg-light" style="height: 15rem;">
-                                <ul class="list-inline bg-secondary my-3 mx-3 pt-2 w-100" style="height: 3rem;">
-                                    <li class="col-2 list-inline-item text-white">STEP<span>１</span></li>
-                                    <li class="col-2 list-inline-item" style="height: 10rem;">&gt;</li>
-                                    <li class="col-2 list-inline-item text-white">STEP<span>２</span></li>
-                                    <li class="col-2 list-inline-item text-white">STEP<span>３</span></li>
-                                    <li class="col-2 list-inline-item text-white">STEP<span>４</span></li>
-                                </ul>
+                    <img class="d-block img-fluid h-100" src="images/FlowImage_forest.png" alt="">
+                    <div class="card-img-overlay container">
+                        <div class="text-center">
+                            <p class="mb-5 pt-3 h1 text-center text-white align-self-start"> - FLO<span
+                                    class="text-secondary">W</span> - </p>
+                            <div class="row bg-dark" style="height: 17rem;">
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary col-6" data-toggle="modal"
+                                    data-target="#exampleModalCenter1">
+                                    コーディング代行の流れはこちら
+                                </button>
+                                <button type="button" class="btn btn-danger col-6" data-toggle="modal"
+                                    data-target="#exampleModalCenter2">
+                                    ペアプログラミングの流れはこちら
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog"
+                                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalCenterTitle">コーディング代行の流れ</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <!-- コーディング代行 -->
+                                                <div class="row bg-dark text-white">
+                                                    <h3 class="col-12 h-25 my-3 text-left"></h3>
+                                                    <img class="col-12 img-fluid w-100" style="height: 5rem;"
+                                                        src="images/Flow1.png" alt="">
+                                                    <div class="col-3 text-left">
+                                                        <h3 class="">STEP1</h3><br>
+                                                        <p>まずはご相談という形でご依頼者様のご要望やWebサイトの大まかなイメージをお伺いし、Webサイトの全体像を明確にします。
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-3 text-left">
+                                                        <h3 class="">STEP2</h3><br>
+                                                        <p>全体像から必要な機能をリストアップし、Webサイトのデザイン・機能を決めていきます。また、写真・文章をご依頼者様にてご用意していただきます。
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-3 text-left">
+                                                        <h3 class="">STEP3</h3><br>
+                                                        <p>デザイン・機能が決まりますとここからコーディング/制作が始まります。パーツごとに進捗を共有いたしますので、安心してお待ちいただけます。
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-3 text-left">
+                                                        <h3 class="">STEP4</h3><br>
+                                                        <p>最終確認ののち、制作データをご依頼者様に納品しご契約は終了となります。</p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog"
+                                aria-labelledby="ModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalCenterTitle">ペアプログラミングの流れ</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!-- ペアプログラミング -->
+                                            <div class="row bg-dark text-white">
+                                                <h3 class="col-12 h-25 my-3 text-left">コーディング代行の流れ</h3>
+                                                <img class="col-12 img-fluid w-100" style="height: 5rem;"
+                                                    src="images/Flow2.png" alt="">
+                                                <div class="col-3 text-left">
+                                                    <h3 class="">STEP1</h3><br>
+                                                    <p>まずはご相談という形でご依頼者様のご要望や目的、１カ月の目標などをお伺いします。</p>
+                                                </div>
+                                                <div class="col-3 text-left">
+                                                    <h3 class="">STEP2</h3><br>
+                                                    <p>このサービスを受ける必要性やモチベーションをしっかりと自覚し、小さな目標から達成できるよう一緒に設定していきます。
+                                                    </p>
+                                                </div>
+                                                <div class="col-3 text-left">
+                                                    <h3 class="">STEP3</h3><br>
+                                                    <p>参考書や参考サイト、模写、自己開発。あなたの努力を全力でサポートします。
+                                                    </p>
+                                                </div>
+                                                <div class="col-3 text-left">
+                                                    <h3 class="">STEP4</h3><br>
+                                                    <p>それまでの歩みの振り返りをし、ご依頼者様に更新の意思があれば引き続きサポートします。</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-        </div> -->
+        </div>
 
-
+        <!-- HISTORY -->
+        <div class="bg-whiite mb-5 pt-1">
+            <section id="history" class="container">
+                <p class="my-5 h1 text-center"> - <span class="text-secondary">HI</span>STORY - </p>
+                <hr>
+                <div class="cp_timeline03 fadeInUp">
+                    <div class="timeline_group">
+                        <span class="time_year">2020</span>
+                        <div class="timeline_item">
+                            <div class="time">
+                                <span class="time_day">8</span>
+                                <span class="time_month">月</span>
+                            </div>
+                            <div class="desc mt-5">
+                                <p class="flag">TOMONIを利用し副業への一歩を踏み出す</p>
+                                <p>独学だけではなくもっと視野を広げたいと思い、<br>
+                                    学習サポートサービス「TOMONI」を利用する。<br>
+                                    まだまだ未熟者ですが、現在は
+                                    <ul>
+                                        <li>コーディング代行</li>
+                                        <li>ペアプログラミング学習</li>
+                                    </ul>
+                                    この２つのサービスを軸に活動しております。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline_group">
+                        <span class="time_year">2019</span>
+                        <div class="timeline_item">
+                            <div class="time">
+                                <span class="time_day">4</span>
+                                <span class="time_month">月</span>
+                            </div>
+                            <div class="desc mt-3">
+                                <p class="flag">訓練校に入学しプログラミングを学ぶ</p>
+                                <p>
+                                    <ul>
+                                        <li>応用情報技術者試験の合格</li>
+                                        <li>プログラミングで形のあるものを制作</li>
+                                        <li>コミュニティ作り</li>
+                                    </ul>
+                                    ３つの目標を掲げて入学を決意。<br>
+                                    2019年10月に基本情報技術者試験を合格し<br>
+                                    残りの半年間で訓練生ポートフォリオ共有サイト「みなツク」をチームで制作する。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline_item">
+                            <div class="time">
+                                <span class="time_day">3</span>
+                                <span class="time_month">月</span>
+                            </div>
+                            <div class="desc">
+                                <p class="flag">プログラマーになるためアパレル店を退職</p>
+                                <p>
+                                    このまま販売員としていいのか疑問に感じ、プログラマーへの道を模索する。<br>
+                                    IT企業に１社合格し、１社不合格をいただいたところで訓練校の存在を知る。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline_group">
+                        <span class="time_year">2017</span>
+                        <div class="timeline_item">
+                            <div class="time">
+                                <span class="time_day">11</span>
+                                <span class="time_month">月</span>
+                            </div>
+                            <div class="desc mt-3">
+                                <p class="flag">地元沖縄の店舗に移動</p>
+                                <p>
+                                    一身上の都合で沖縄へ戻り、半年間CSリーダーを経験する。<br>
+                                    金融系の幅広い知識を得るためFP2級の資格を取得。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline_item">
+                            <div class="time">
+                                <span class="time_day">5</span>
+                                <span class="time_month">月</span>
+                            </div>
+                            <div class="desc mt-3">
+                                <p class="flag">東京の某アパレル店に準社員として入社</p>
+                                <p>
+                                    大きな会社の大きな店舗で社会人のマナーを学びたいと思い入社を決意。<br>
+                                    働く大変さや楽しさ、上手く動くことのできない悔しさなどを経験する。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline_item">
+                            <div class="time">
+                                <span class="time_day">3</span>
+                                <span class="time_month">月</span>
+                            </div>
+                            <div class="desc mt-3">
+                                <p class="flag">大学を中途退学</p>
+                                <p>
+                                    入学目的の心変わりや、大学の総費用を考え中途退学を決意。<br>
+                                    2カ月間派遣でお金を貯め、FP3級の資格を取り<br>
+                                    派遣先でお世話になった某アパレル店で働きたいと考え東京へ飛ぶ。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline_group">
+                        <span class="time_year">2016</span>
+                        <div class="timeline_item">
+                            <div class="time">
+                                <span class="time_day">4</span>
+                                <span class="time_month">月</span>
+                            </div>
+                            <div class="desc mt-3">
+                                <p class="flag">岐阜県の大学に入学</p>
+                                <p>商業科の教員免許を取得し、会計学の勉強をするために岐阜へ飛ぶ。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
 
     </article>
-    <footer>
-
+    <footer class="py-3 bg-dark text-white">
+        <div class="container text-center">
+            <!-- ナビゲーション -->
+            <ul class="nav justify-content-center mb-3">
+                <li class="nav-item">
+                    <a href="#top" class="nav-link text-white">TOP</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link text-white">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skill" class="nav-link text-white">SKILL</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#servise" class="nav-link text-white">SERVISE</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#flow" class="nav-link text-white">FLOW</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#history" class="nav-link text-white">HISTORY</a>
+                </li>
+            </ul>
+            <!-- コピーライト -->
+            <small>Copyright &copy;2020 Suke</small>
+        </div>
     </footer>
 </body>
 
