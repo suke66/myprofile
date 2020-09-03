@@ -12,209 +12,13 @@
     <!-- BootstrapのJS読み込み -->
     <script src="js/bootstrap.min.js"></script>
 
+    <!-- カスタムCSS -->
+    <link rel="stylesheet" href="css/style.css">
+
     <!-- トップボタン -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
 
     <title>Suke-Profile</title>
-
-    <style>
-        /* header */
-        .car-img {
-            height: 41rem;
-        }
-
-        /* コンテンツ */
-        #about,
-        #skill,
-        #servise,
-        #flow,
-        #history {
-            margin-top: -48px;
-            padding-top: 48px;
-        }
-
-        /* フェードイン */
-        .fadeInUp {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: 1s;
-        }
-
-        /* トップボタン */
-        #page_top {
-            width: 50px;
-            height: 50px;
-            position: fixed;
-            right: 15px;
-            bottom: -50px;
-            background: #5f5f5f;
-            opacity: 1;
-            z-index: 5;
-        }
-
-        #page_top a {
-            position: relative;
-            display: block;
-            width: 50px;
-            height: 40px;
-            text-decoration: none;
-        }
-
-        #page_top a::before {
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-            content: '\f106';
-            font-size: 25px;
-            color: #fff;
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            left: 0;
-            margin: auto;
-            text-align: center;
-        }
-
-        /* タイムラインコンテンツ */
-        .cp_timeline03 {
-            position: relative;
-            margin: 3em auto;
-        }
-
-        .cp_timeline03:before {
-            position: absolute;
-            top: 0;
-            width: 4px;
-            height: 100%;
-            content: '';
-            background-color: #5f5f5f;
-            left: 30px;
-        }
-
-        .cp_timeline03 .timeline_group {
-            position: relative;
-            padding-top: 55px;
-        }
-
-        .cp_timeline03 .timeline_group:not(:first-of-type) {
-            margin-top: 4rem;
-        }
-
-        .cp_timeline03 .time_year {
-            position: absolute;
-            top: 0;
-            left: 0;
-            padding: 0.5rem 1.5rem;
-            color: #fff;
-            background-color: #444;
-            width: 100%;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-
-        .cp_timeline03 .timeline_item {
-            margin-bottom: 1em;
-            position: relative;
-            padding-left: 80px;
-        }
-
-        .cp_timeline03 .timeline_item:not(:last-of-type) {
-            margin-bottom: 2em;
-        }
-
-        .cp_timeline03 .timeline_item:before {
-            position: absolute;
-            z-index: -1;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            content: '';
-            background-color: #5f5f5f;
-            top: 50%;
-            -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-        }
-
-        .cp_timeline03 .time {
-            position: absolute;
-            left: 0;
-            box-sizing: border-box;
-            min-width: 65px;
-            min-height: 65px;
-            padding: 0.5em 0.5em;
-            text-align: center;
-            color: #fff;
-            background-color: #444;
-            top: 50%;
-            margin-top: -33px;
-            border-radius: 65px;
-        }
-
-        .cp_timeline03 .time_day {
-            font-size: 1em;
-            font-weight: 700;
-            display: block;
-        }
-
-        .cp_timeline03 .time_month {
-            font-size: 0.8em;
-            display: block;
-            text-transform: uppercase;
-        }
-
-        .cp_timeline03 .desc {
-            padding: 0.5em 1em;
-            border-left: 3px solid #444;
-            border-radius: 2px;
-            background-color: #fff;
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
-            font-size: 0.9em;
-        }
-
-        .cp_timeline03 .desc .flag {
-            font-size: 1.2em;
-            font-weight: bold;
-            margin: 0;
-            padding: 0;
-            padding-bottom: 0.3em;
-        }
-
-        @media only screen and (max-width: 767px) {
-            .cp_timeline03:before {
-                left: 0;
-            }
-
-            .cp_timeline03 .timeline_group {
-                padding-top: 40px;
-            }
-
-            .cp_timeline03 .timeline_item {
-                padding-top: 60px;
-                padding-left: 20px;
-            }
-
-            .cp_timeline03 .timeline_item:before {
-                top: 90px;
-            }
-
-            .cp_timeline03 .time {
-                top: 40px;
-                border-radius: 0 20px 20px 0;
-                min-height: 2em;
-            }
-
-            .cp_timeline03 .time_day,
-            .cp_timeline03 .time_month {
-                display: inline-block;
-            }
-
-            .cp_timeline03 .desc {
-                font-size: 0.8em;
-            }
-        }
-    </style>
 
     <script>
         // 文字の出現
@@ -500,104 +304,101 @@
         </div>
 
         <!-- FLOW -->
-        <div class="bg-whiite pt-1">
+        <div class="bg-whiite pt-5">
             <section id="flow" class="">
-                <div class="card">
-                    <img class="d-block img-fluid h-100" src="images/FlowImage_forest.png" alt="">
-                    <div class="card-img-overlay container">
-                        <div class="text-center">
-                            <p class="mb-5 pt-3 h1 text-center text-white align-self-start"> - FLO<span
-                                    class="text-secondary">W</span> - </p>
-                            <div class="row bg-dark" style="height: 17rem;">
-                                <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-primary col-6" data-toggle="modal"
-                                    data-target="#exampleModalCenter1">
-                                    コーディング代行の流れはこちら
-                                </button>
-                                <button type="button" class="btn btn-danger col-6" data-toggle="modal"
-                                    data-target="#exampleModalCenter2">
-                                    ペアプログラミングの流れはこちら
-                                </button>
+                <!-- <img class="d-block img-fluid h-100" src="images/FlowImage_forest.png" alt=""> -->
+                <div class="container">
+                    <div class="text-center">
+                        <p class="my-5 pb-5 h1 text-center text-white align-self-start"> - FLO<span
+                                class="text-secondary">W</span> - </p>
+                        <div class="row bg-dark" style="height: 17rem;">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary col-6" data-toggle="modal"
+                                data-target="#exampleModalCenter1">
+                                コーディング代行の流れはこちら
+                            </button>
+                            <button type="button" class="btn btn-danger col-6" data-toggle="modal"
+                                data-target="#exampleModalCenter2">
+                                ペアプログラミングの流れはこちら
+                            </button>
 
-                                <!-- Modal -->
-                                <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog"
-                                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalCenterTitle">コーディング代行の流れ</h5>
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                    aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <!-- コーディング代行 -->
-                                                <div class="row bg-dark text-white">
-                                                    <h3 class="col-12 h-25 my-3 text-left"></h3>
-                                                    <img class="col-12 img-fluid w-100" style="height: 5rem;"
-                                                        src="images/Flow1.png" alt="">
-                                                    <div class="col-3 text-left">
-                                                        <h3 class="">STEP1</h3><br>
-                                                        <p>まずはご相談という形でご依頼者様のご要望やWebサイトの大まかなイメージをお伺いし、Webサイトの全体像を明確にします。
-                                                        </p>
-                                                    </div>
-                                                    <div class="col-3 text-left">
-                                                        <h3 class="">STEP2</h3><br>
-                                                        <p>全体像から必要な機能をリストアップし、Webサイトのデザイン・機能を決めていきます。また、写真・文章をご依頼者様にてご用意していただきます。
-                                                        </p>
-                                                    </div>
-                                                    <div class="col-3 text-left">
-                                                        <h3 class="">STEP3</h3><br>
-                                                        <p>デザイン・機能が決まりますとここからコーディング/制作が始まります。パーツごとに進捗を共有いたしますので、安心してお待ちいただけます。
-                                                        </p>
-                                                    </div>
-                                                    <div class="col-3 text-left">
-                                                        <h3 class="">STEP4</h3><br>
-                                                        <p>最終確認ののち、制作データをご依頼者様に納品しご契約は終了となります。</p>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             <!-- Modal -->
-                            <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog"
-                                aria-labelledby="ModalCenterTitle" aria-hidden="true">
+                            <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalCenterTitle">ペアプログラミングの流れ</h5>
+                                            <h5 class="modal-title" id="exampleModalCenterTitle">コーディング代行の流れ</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <!-- ペアプログラミング -->
+                                            <!-- コーディング代行 -->
                                             <div class="row bg-dark text-white">
-                                                <h3 class="col-12 h-25 my-3 text-left">コーディング代行の流れ</h3>
+                                                <h3 class="col-12 h-25 my-3 text-left"></h3>
                                                 <img class="col-12 img-fluid w-100" style="height: 5rem;"
-                                                    src="images/Flow2.png" alt="">
+                                                    src="images/Flow1.png" alt="">
                                                 <div class="col-3 text-left">
                                                     <h3 class="">STEP1</h3><br>
-                                                    <p>まずはご相談という形でご依頼者様のご要望や目的、１カ月の目標などをお伺いします。</p>
+                                                    <p>まずはご相談という形でご依頼者様のご要望やWebサイトの大まかなイメージをお伺いし、Webサイトの全体像を明確にします。
+                                                    </p>
                                                 </div>
                                                 <div class="col-3 text-left">
                                                     <h3 class="">STEP2</h3><br>
-                                                    <p>このサービスを受ける必要性やモチベーションをしっかりと自覚し、小さな目標から達成できるよう一緒に設定していきます。
+                                                    <p>全体像から必要な機能をリストアップし、Webサイトのデザイン・機能を決めていきます。また、写真・文章をご依頼者様にてご用意していただきます。
                                                     </p>
                                                 </div>
                                                 <div class="col-3 text-left">
                                                     <h3 class="">STEP3</h3><br>
-                                                    <p>参考書や参考サイト、模写、自己開発。あなたの努力を全力でサポートします。
+                                                    <p>デザイン・機能が決まりますとここからコーディング/制作が始まります。パーツごとに進捗を共有いたしますので、安心してお待ちいただけます。
                                                     </p>
                                                 </div>
                                                 <div class="col-3 text-left">
                                                     <h3 class="">STEP4</h3><br>
-                                                    <p>それまでの歩みの振り返りをし、ご依頼者様に更新の意思があれば引き続きサポートします。</p>
+                                                    <p>最終確認ののち、制作データをご依頼者様に納品しご契約は終了となります。</p>
                                                 </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog"
+                            aria-labelledby="ModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalCenterTitle">ペアプログラミングの流れ</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- ペアプログラミング -->
+                                        <div class="row bg-dark text-white">
+                                            <h3 class="col-12 h-25 my-3 text-left">コーディング代行の流れ</h3>
+                                            <img class="col-12 img-fluid w-100" style="height: 5rem;"
+                                                src="images/Flow2.png" alt="">
+                                            <div class="col-3 text-left">
+                                                <h3 class="">STEP1</h3><br>
+                                                <p>まずはご相談という形でご依頼者様のご要望や目的、１カ月の目標などをお伺いします。</p>
+                                            </div>
+                                            <div class="col-3 text-left">
+                                                <h3 class="">STEP2</h3><br>
+                                                <p>このサービスを受ける必要性やモチベーションをしっかりと自覚し、小さな目標から達成できるよう一緒に設定していきます。
+                                                </p>
+                                            </div>
+                                            <div class="col-3 text-left">
+                                                <h3 class="">STEP3</h3><br>
+                                                <p>参考書や参考サイト、模写、自己開発。あなたの努力を全力でサポートします。
+                                                </p>
+                                            </div>
+                                            <div class="col-3 text-left">
+                                                <h3 class="">STEP4</h3><br>
+                                                <p>それまでの歩みの振り返りをし、ご依頼者様に更新の意思があれば引き続きサポートします。</p>
                                             </div>
                                         </div>
                                     </div>
@@ -606,6 +407,7 @@
                         </div>
                     </div>
                 </div>
+
             </section>
         </div>
 
